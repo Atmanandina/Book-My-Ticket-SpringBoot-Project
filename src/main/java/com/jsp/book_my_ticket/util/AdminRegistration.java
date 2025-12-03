@@ -25,12 +25,7 @@ public class AdminRegistration implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		if(!userRepo.existsByEmail(email)) {//It is overcome from multiple copies in database of same type
-		User user=new User();
-		user.setEmail(email);
-		user.setPassword(AES.encrypt(password));//This AES help to encrypt the password
-		user.setRole("ADMIN");
-		user.setMobile(0000000L);
-		user.setName("Admin");
+		User user = new User(null, "ADMIN", email, 0L, AES.encrypt(password), "ADMIN",false);
 		userRepo.save(user);//Saves the user data in database
 		log.info("Admin Resitration sucess");
 		}else {

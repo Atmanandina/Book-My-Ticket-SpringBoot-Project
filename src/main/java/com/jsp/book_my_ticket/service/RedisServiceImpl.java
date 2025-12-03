@@ -5,6 +5,7 @@ package com.jsp.book_my_ticket.service;
 import java.time.Duration;
 
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.jsp.book_my_ticket.dto.UserDto;
@@ -18,11 +19,13 @@ public class RedisServiceImpl implements RedisService {
 	private final RedisTemplate<String, Object> redisTemplate;
 
 	@Override
+	@Async
 	public void saveUserDto(String email, UserDto userDto) {
 		redisTemplate.opsForValue().set("dto-" + email, userDto, Duration.ofMinutes(15));
 	}
 
 	@Override
+	@Async
 	public void saveOtp(String email, int otp) {
 		redisTemplate.opsForValue().set("otp-" + email, otp, Duration.ofMinutes(2));
 	}
