@@ -19,6 +19,7 @@ import com.jsp.book_my_ticket.dto.ScreenDto;
 import com.jsp.book_my_ticket.dto.TheaterDto;
 import com.jsp.book_my_ticket.dto.UserDto;
 import com.jsp.book_my_ticket.entity.Screen;
+import com.jsp.book_my_ticket.entity.Seat;
 import com.jsp.book_my_ticket.entity.Theater;
 import com.jsp.book_my_ticket.entity.User;
 import com.jsp.book_my_ticket.repository.ScreenRepository;
@@ -496,4 +497,31 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	
+	@Override
+	public String manageSeats(Long id, HttpSession session, ModelMap map, RedirectAttributes attributes) {
+		User user = getUserFromSession(session);
+		if (user == null || !user.getRole().equals("ADMIN")) {
+			attributes.addFlashAttribute("fail", "Invalid Session");
+			return "redirect:/login";
+		} else {
+			Screen screen = screenRepository.findById(id).orElseThrow();
+			List<Seat> seats = screen.getSeats();
+			map.put("seats", seats);
+			map.put("screenId", id);
+			return "manage-seats.html";
+		}
+	}
+
+	@Override
+	public String addSeats(Long id, HttpSession session, ModelMap map, RedirectAttributes attributes) {
+		User user = getUserFromSession(session);
+		if (user == null || !user.getRole().equals("ADMIN")) {
+			attributes.addFlashAttribute("fail", "Invalid Session");
+			return "redirect:/login";
+		} else {
+			Screen screen = screenRepository.findById(id).orElseThrow();
+			map.put("id", id);
+			return "add-seats.html";
+		}
+	}
 }
