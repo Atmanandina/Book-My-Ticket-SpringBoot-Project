@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jsp.book_my_ticket.dto.LoginDto;
 import com.jsp.book_my_ticket.dto.PasswordDto;
+import com.jsp.book_my_ticket.dto.ScreenDto;
 import com.jsp.book_my_ticket.dto.TheaterDto;
 import com.jsp.book_my_ticket.dto.UserDto;
 
@@ -45,4 +46,24 @@ public interface UserService {
 
 	String addTheater(HttpSession session, RedirectAttributes attributes, @Valid TheaterDto theaterDto,
 			BindingResult result) throws IOException;
+	
+	String deleteTheater(Long id, HttpSession session, RedirectAttributes attributes);
+
+	String editTheater(Long id, HttpSession session, RedirectAttributes attributes, ModelMap map);
+
+	String updateTheater(HttpSession session, RedirectAttributes attributes, @Valid TheaterDto theaterDto,
+			BindingResult result, Long id);
+
+	String manageScreens(Long id, HttpSession session, RedirectAttributes attributes, ModelMap map);
+
+	String addScreen(Long id, HttpSession session, RedirectAttributes attributes, ModelMap map, ScreenDto screenDto);
+
+	String addScreen(ScreenDto screenDto,BindingResult result, HttpSession session, RedirectAttributes attributes);
+	
+	String deleteScreen(Long id, HttpSession session, RedirectAttributes attributes);
+
+	String editScreen(Long id, HttpSession session, RedirectAttributes attributes, ModelMap map);
+
+	String updateScreen(@Valid ScreenDto screenDto, Long id, BindingResult result, HttpSession session,
+			RedirectAttributes attributes, ModelMap map);
 }

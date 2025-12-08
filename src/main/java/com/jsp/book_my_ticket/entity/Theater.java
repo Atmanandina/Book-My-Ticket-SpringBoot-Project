@@ -22,5 +22,7 @@ public class Theater {
 	private String locationLink;
 	@Column(nullable = false)
 	private String imageLocation;
+	
+	private int screenCount;
 
 }

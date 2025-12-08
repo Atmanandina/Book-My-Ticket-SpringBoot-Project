@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jsp.book_my_ticket.dto.LoginDto;
 import com.jsp.book_my_ticket.dto.PasswordDto;
+import com.jsp.book_my_ticket.dto.ScreenDto;
 import com.jsp.book_my_ticket.dto.TheaterDto;
 import com.jsp.book_my_ticket.dto.UserDto;
 import com.jsp.book_my_ticket.service.UserService;
@@ -119,6 +120,55 @@ public class UserController {
 	@PostMapping("/add-theater")
 	public String addTheater(@Valid TheaterDto theaterDto,BindingResult result,RedirectAttributes attributes,HttpSession session) throws IOException {
 		return userService.addTheater(session, attributes, theaterDto,result);
+	}
+	@GetMapping("/delete-theater/{id}")
+	public String deleteTheater(@PathVariable Long id, HttpSession session, RedirectAttributes attributes) {
+		return userService.deleteTheater(id, session, attributes);
+	}
+
+	@GetMapping("/edit-theater/{id}")
+	public String editTheater(@PathVariable Long id, HttpSession session, RedirectAttributes attributes, ModelMap map) {
+		return userService.editTheater(id, session, attributes, map);
+	}
+
+	@PostMapping("/update-theater")
+	public String updateTheater(@Valid TheaterDto theaterDto, BindingResult result, RedirectAttributes attributes,
+			HttpSession session, @RequestParam("id") Long id) throws IOException {
+		return userService.updateTheater(session, attributes, theaterDto, result, id);
+	}
+
+	@GetMapping("/manage-screens/{id}")
+	public String manageScreens(@PathVariable Long id, HttpSession session, RedirectAttributes attributes,
+			ModelMap map) {
+		return userService.manageScreens(id, session, attributes, map);
+	}
+
+	@GetMapping("/add-screen/{id}")
+	public String addScreen(@PathVariable Long id, HttpSession session, RedirectAttributes attributes, ModelMap map,
+			ScreenDto screenDto) {
+		return userService.addScreen(id, session, attributes, map, screenDto);
+	}
+
+	@PostMapping("/add-screen")
+	public String addScreen(@Valid ScreenDto screenDto, BindingResult result, HttpSession session,
+			RedirectAttributes attributes) {
+		return userService.addScreen(screenDto, result, session, attributes);
+	}
+	
+	@GetMapping("/delete-screen/{id}")
+	public String deleteScreen(@PathVariable Long id, HttpSession session, RedirectAttributes attributes) {
+		return userService.deleteScreen(id, session, attributes);
+	}
+
+	@GetMapping("/edit-screen/{id}")
+	public String edditScreen(@PathVariable Long id, HttpSession session, RedirectAttributes attributes, ModelMap map) {
+		return userService.editScreen(id, session, attributes, map);
+	}
+
+	@PostMapping("/update-screen")
+	public String updateScreen(@Valid ScreenDto screenDto, BindingResult result, @RequestParam Long id, ModelMap map,
+			RedirectAttributes attributes, HttpSession session) {
+		return userService.updateScreen(screenDto, id, result, session, attributes, map);
 	}
 }
 	
