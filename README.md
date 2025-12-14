@@ -1,4 +1,4 @@
-                                            🎬 Book My Ticket – Movie Ticket Booking Application
+                                    🎬 Book My Ticket – Movie Ticket Booking Application
 
 Book My Ticket is a full-stack movie ticket booking web application built using Spring Boot and Thymeleaf. The project allows users to browse movies, view shows, select seats, and book tickets. It also includes image management, temporary data handling, and persistent storage using modern backend technologies.
 
