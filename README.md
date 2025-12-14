@@ -1,4 +1,4 @@
-🎬 Book My Ticket – Movie Ticket Booking Application
+                                                                          🎬 Book My Ticket – Movie Ticket Booking Application
 
 Book My Ticket is a full-stack movie ticket booking web application built using Spring Boot and Thymeleaf. The project allows users to browse movies, view shows, select seats, and book tickets. It also includes image management, temporary data handling, and persistent storage using modern backend technologies.
 
@@ -20,7 +20,7 @@ Server-side rendering with Thymeleaf
 
 Clean MVC architecture (Controller–Service–Repository)
 
-🛠️ Technologies Used
+Technologies Used
 Backend
 
 Java 17
@@ -86,7 +86,8 @@ Cloudinary Configuration
 cloudinary.cloud-name=YOUR_CLOUD_NAME
 cloudinary.api-key=YOUR_API_KEY
 cloudinary.api-secret=YOUR_API_SECRET
-▶️ How to Run the Project
+
+How to Run the Project
 
 Clone the repository
 
@@ -121,7 +122,7 @@ Seat – seat availability
 
 Booking – ticket booking details
 
-🔮 Future Enhancements
+Future Enhancements
 
 Online payment gateway integration
 
@@ -133,14 +134,10 @@ Email/SMS booking confirmation
 
 REST API version of the application
 
-👨‍💻 Author
+Author
 
 Atmanand Inamati
 Computer Science Student
 GitHub: https://github.com/Atmanandina
-
-📜 License
-
-This project is for learning and educational purposes.
 
 ⭐ If you like this project, feel free to star the repository!
