@@ -109,7 +109,7 @@ mvn spring-boot:run
 
 Open the browser and visit
 
-http://localhost:8080
+http://localhost
 📂 Database Design (Overview)
 
 User – stores user details
