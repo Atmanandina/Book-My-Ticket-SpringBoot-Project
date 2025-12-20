@@ -9,17 +9,12 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Seat {
-	
+public class ShowSeat {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String seatNumber;
-	private String seatRow;
-	private Integer seatColumn;
-	private String category;
-	
 	@ManyToOne
-	Screen screen;
+	private Seat seat;
+	private boolean isBooked;
 
 }

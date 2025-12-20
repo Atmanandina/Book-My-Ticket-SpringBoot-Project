@@ -30,6 +30,6 @@ spring:
             enable: true
 admin:
   email: admin@gmail.com
-  password: Admin@1234
+  password: Admin
 cloudinary:
   url: ${CLOUDINARY_URL}

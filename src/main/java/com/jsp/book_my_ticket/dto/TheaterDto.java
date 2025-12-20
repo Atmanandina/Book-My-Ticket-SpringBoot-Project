@@ -20,5 +20,4 @@ public class TheaterDto {
 	private String locationLink;
 	@NotNull(message = "* It is Required")
 	private MultipartFile image;
-	
 }

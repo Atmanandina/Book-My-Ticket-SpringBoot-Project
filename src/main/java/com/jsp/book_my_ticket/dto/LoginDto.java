@@ -1,6 +1,5 @@
 package com.jsp.book_my_ticket.dto;
 
-
 import lombok.Data;
 
 @Data
