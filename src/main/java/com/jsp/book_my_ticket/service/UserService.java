@@ -93,6 +93,8 @@ public interface UserService {
 
 	String loadMain(ModelMap map);
 	
+	String bookMovie(Long id, HttpSession session, RedirectAttributes attributes, ModelMap map);
+	
 
 
 	
