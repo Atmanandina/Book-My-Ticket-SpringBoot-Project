@@ -17,6 +17,7 @@
                 <th>Movie</th>
                 <th>Ticket Price</th>
                 <th>Total Seats</th>
+                <th>Delete Shows</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +34,7 @@
                 <td th:text="${show.ticketPrice}"></td>
 
                 <td th:text="${#lists.size(show.seats)}"></td>
+                <td><a th:href="'/delete-show/'+${show.id}"> <button>Delete</button> </a></td>
             </tr>
         </tbody>
     </table>
@@ -44,6 +46,7 @@
 	
 	
 	<a th:href="'/add-show/'+${id}"><button>Add Show</button></a>
+	
 	
 </div>
 </body>
